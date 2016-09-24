@@ -9,6 +9,7 @@
   %body
     %h1.title Rotten Potatoes!
     #main
+      = button_to 'FUCK YOU', new_user_path
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
