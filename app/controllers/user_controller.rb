@@ -3,7 +3,7 @@ class UserController < ApplicationController
       #params.require(:user).permit(:id, :email) 
     end
     
-    def new
+    def new?
       # default new template
     end
     
