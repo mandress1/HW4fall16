@@ -4,7 +4,7 @@ class UsersController < ApplicationController
        #params.require 
     end
     
-    def new
+    def new?
       
     end
     
