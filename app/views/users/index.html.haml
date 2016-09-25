@@ -9,7 +9,9 @@
   %tbody
     - @users.each do |user|
       %tr
-        %td= "id: #{user.column_names}"
+        %td= "id: #{user}"
         %td= "Email: #{user.email}"
+        
+%p "#{User.column_names}"
   
 = link_to 'home', movies_path
