@@ -1,6 +1,5 @@
-class UsersController < ApplicationController
-    
-    def user_params
+class UserController < ApplicationController
+  def user_params
        params.require(:user).permit(:id, :email) 
     end
     
@@ -13,5 +12,4 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.id} was created"
       redirect_to.movies_path
     end
-
 end
