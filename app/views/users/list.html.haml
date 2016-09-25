@@ -1,0 +1,15 @@
+-# This files is app/views/users/list.html.haml
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th User ID
+      %th User E-Mail
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.user_id
+        %td= user.email
+  
+= link_to 'home', movies_path
