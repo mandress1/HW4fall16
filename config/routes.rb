@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :movies
   
   # I think this is the correct way to add routes
-  resources :user 
+  resources :users 
   
   # Example resource route with options:
   #   resources :products do
