@@ -6,10 +6,12 @@
     %tr
       %th User ID
       %th User E-Mail
+      %th Session token
   %tbody
     - @users.each do |user|
       %tr
         %td= "#{user.user_id}"
         %td= "#{user.email}"
+        %td= "#{user.session_token}"
   
 = link_to 'home', movies_path
