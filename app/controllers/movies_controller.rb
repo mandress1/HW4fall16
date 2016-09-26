@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 
+  before_filter :set_current_user
+  
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
   end
@@ -40,6 +42,10 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+  
+  def set_current_user
+    @current_user ||= session[:session_token] && User.find_by(session_token: session[:session_token])
   end
 
 end
