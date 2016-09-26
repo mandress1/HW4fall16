@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.user_id} was created"
       redirect_to users_path
     else
-      flash[:notice] = "#{params[:user_id]} already exists"
-      redirect_to users_path
+      flash[:notice] = "Sorry, that user-id already exists"
+      redirect_to new_user_path
     end
   end
   
