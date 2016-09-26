@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   
   def create
     params = session_params
-    puts "WOWOWOWO\n#{params}\nWPWPWPPWPWP"
     usr = User.find_by(user_id: params[:user_id])
     
     if not usr.nil?
