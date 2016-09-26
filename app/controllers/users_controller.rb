@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    if User.find_by(user_id: params[:user_id]) == nil
+    if User.find_by(user_id: params[:user][:user_id]) == nil
       @user = User.create!(user_params)
       flash[:notice] = "#{@user.user_id} was created"
       redirect_to users_path
