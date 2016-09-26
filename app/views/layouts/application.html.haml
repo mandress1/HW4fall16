@@ -9,14 +9,14 @@
   %body
     %h1.title Rotten Potatoes!
     #main
-      = link_to "Home", root_path
+      = link_to "Home", movies_path
       %br
       %br
       - if not @current_user
         = button_to 'Sign up/Login', login_path, id: "signuplogin", :method => :get
       - else
-        #notice.message= "You are logged in as #{@current_user}"
-        = button_to 'Log Out', logout_path
+        #notice.message= "You are logged in as #{@current_user.user_id}"
+        = button_to 'Log Out', logout_path, id: "logout", method: :delete
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
