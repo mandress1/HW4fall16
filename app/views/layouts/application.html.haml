@@ -9,9 +9,6 @@
   %body
     %h1.title Rotten Potatoes!
     #main
-      = link_to "Home", movies_path
-      %br
-      %br
       - if not @current_user
         = button_to 'Sign up/Login', login_path, id: "signuplogin", :method => :get
       - else
