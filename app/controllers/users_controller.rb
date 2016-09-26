@@ -9,9 +9,14 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.create!(user_params)
-    flash[:notice] = "#{@user.user_id} was created"
-    redirect_to users_path
+    if User.find_by(user_id: params[:user_id]) == nil
+      @user = User.create!(user_params)
+      flash[:notice] = "#{@user.user_id} was created"
+      redirect_to users_path
+    else
+      flash[:notice] = "#{params[:user_id]} already exists"
+      redirect_to users_path
+    end
   end
   
   def index
