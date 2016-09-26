@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if not usr.nil?
       if usr.email == params[:email]
         session[:session_token] = usr.session_token
-        flash[:notice] = "You are logged in as #{usr.user_id}"
+        # flash[:notice] = "You are logged in as #{usr.user_id}"
         redirect_to root_path
       else
         flash[:warning] = "Invalid user-id/e-mail combination"
