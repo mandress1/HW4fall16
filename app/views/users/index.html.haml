@@ -12,6 +12,7 @@
         %td= "id: #{user.user_id}"
         %td= "Email: #{user.email}"
         
-%p "#{User.column_names}"
+-# %p "#{User.column_names}"
+%p "#{User.find("id_that's not there")}"
   
 = link_to 'home', movies_path
