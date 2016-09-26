@@ -23,4 +23,9 @@ class SessionsController < ApplicationController
     end
   end
   
+  def destroy
+    session[:session_token] = nil
+    redirect_to movies_path
+  end
+  
 end
