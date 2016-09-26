@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     else
       if User.find_by(user_id: params[:user][:user_id]) == nil
         @user = User.create!(user_params)
-        flash[:notice] = "#{@user.user_id} was created"
+        flash[:notice] = "Welcome #{@user.user_id}. Your accout has been created"
         redirect_to users_path
       else
         flash[:notice] = "Sorry, that user-id already exists"
