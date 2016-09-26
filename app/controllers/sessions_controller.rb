@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
   
   def session_params
-    params.require(:session).permit(:user_id, :email)  
+    params.require(:user).permit(:user_id, :email)  
   end
   
   def create
     params = session_params
+    puts "WOWOWOWO\n#{params}\nWPWPWPPWPWP"
     usr = User.find_by(user_id: params[:user_id])
     
     if not usr.nil?
